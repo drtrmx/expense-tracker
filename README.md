@@ -1,4 +1,4 @@
-# expense-tracker
+# Expense Tracker Description
 
 ## Functional Requirements
 
