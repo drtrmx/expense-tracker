@@ -1,3 +1,9 @@
 # expense-tracker
 
-## Functional Rerquirements
+## Functional Requirements
+
+## Non-Functional Requirements
+
+## Technical Glossary
+
+## Functional Requirements
