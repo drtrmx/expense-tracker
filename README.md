@@ -32,6 +32,6 @@ The following app is intended to serve as a simple expense tracker to help organ
 - admin:
     can view, edit, delete all expense objects and users
 - owner: 
-    can view, edit, delete all the expense object created byt given user
+    can view, edit, delete all the expense object created by the given user
 - contributor:
     can view, edit all the expense object which given user was added to
