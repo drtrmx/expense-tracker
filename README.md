@@ -5,10 +5,153 @@ The following app is intended to serve as a simple expense tracker to help organ
 - adding new by pressing the plus/add button
 - modifying by clicking the edit button or the object itself
 - deleting by clicking the delete button
-- sorting by date, type, contributors, value, details, settlement status
+- sorting by date, category, contributors, value, description
 - drawing graphs about expenses
 - adding contributors/sharing expenses
 - data is stored in databases and can be accessed through the user interface after successful authentication
+
+### Databases
+#### Users
+- Id (number, autoincrement)
+- Username (varchar)
+- Role (number) --> 0: admin, 1: owner, 2: contributor
+#### Transactions
+- Id (number, autoincrement)
+- UserId (number)
+- Title (varchar)
+- Value (float)
+- Category (varchar)
+- Date (date)
+- Description (varchar)
+- ContributorId (number)
+
+### API endpoints
+**GET** `/users`
+
+Request:
+
+    {
+    }
+
+Response:
+
+    [
+    	{
+    		id: number;
+    		username: string;
+    		role: number;
+    	},
+    	.
+    	.
+    	.
+    ]
+
+**POST** `/users`
+
+Request:
+
+    {
+    	username: string;
+    	role: number;
+    }
+
+Response: 
+
+    {
+    	id: number;
+    }
+    
+**GET** `/transactions`
+
+Request:
+
+    {
+    }
+
+Response:
+
+    [
+    	{
+    		id: number;
+    		title: string;
+    		value: number;
+    		category: string;
+    		date: string;
+    		description: string;
+    		contributorId: number;
+    	},
+    	.
+    	.
+    	.
+    ]
+    
+**GET** `/transactions/{id}`
+
+Request:
+
+    {
+    }
+
+Response:
+
+    {
+    	id: number;
+    	title: string;
+    	value: number;
+    	category: string;
+    	date: string;
+    	description: string;
+    	contributorId: number;
+    }
+
+**POST** `/transactions`
+
+Request:
+
+    {
+        title: string;
+        value: number;
+        category: string;
+        date: string;
+        description: string;
+        contributorId: number;
+    }
+
+Response: 
+
+    {
+    	id: number;
+    }
+
+**PUT** `/transactions/{id}`
+
+Request:
+
+    {
+        title: string;
+        value: number;
+        category: string;
+        date: string;
+        description: string;
+        contributorId: number;
+    }
+
+Response: 
+
+    {
+    }
+
+**DELETE** `/transactions/{id}`
+
+Request:
+
+    {
+    }
+
+Response: 
+
+    {
+    }
 
 ## Non-Functional Requirements
 
