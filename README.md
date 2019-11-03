@@ -20,10 +20,17 @@ The following app is intended to serve as a simple expense tracker to help organ
 - UserId (number)
 - Title (varchar)
 - Value (float)
-- Category (varchar)
+- CategoryId (number)
+- PlaceId (number)
 - Date (date)
 - Description (varchar)
 - ContributorId (number)
+#### Categories
+- Id (number, autoincrement)
+- Name (varchar)
+#### Places
+- Id (number, autoincrement)
+- Name (varchar)
 
 ### API endpoints
 **GET** `/users`
@@ -75,7 +82,14 @@ Response:
     		id: number;
     		title: string;
     		value: number;
-    		category: string;
+    		category: {
+    		    id: number;
+    		    name: string;
+    		}
+    		place: {
+    		    id: number;
+    		    name: string;
+    		}
     		date: string;
     		description: string;
     		contributorId: number;
@@ -142,6 +156,184 @@ Response:
     }
 
 **DELETE** `/transactions/{id}`
+
+Request:
+
+    {
+    }
+
+Response: 
+
+    {
+    }
+    
+**GET** `/categories`
+
+Request:
+
+    {
+    }
+
+Response:
+
+    [
+    	{
+    		id: number;
+    		name: string;
+    		places: [
+    		    {
+    		        id: number;
+    		        name: string;
+    		    },
+    		    .
+    		    .
+    		    .
+    		]
+    	},
+    	.
+    	.
+    	.
+    ]
+    
+**GET** `/categories/{id}`
+
+Request:
+
+    {
+    }
+
+Response:
+
+    {
+    	id: number;
+    	name: string;
+        places: [
+            {
+                id: number;
+                name: string;
+            },
+            .
+            .
+            .
+        ]
+    }
+
+**POST** `/categories`
+
+Request:
+
+    {
+        name: string;
+        places: [
+            {
+                id: number;
+            },
+            .
+            .
+            .
+        ]
+    }
+
+Response: 
+
+    {
+    	id: number;
+    }
+
+**PUT** `/categories/{id}`
+
+Request:
+
+    {
+            name: string;
+            places: [
+                {
+                    id: number;
+                },
+                .
+                .
+                .
+            ]
+        }
+
+Response: 
+
+    {
+    }
+
+**DELETE** `/categories/{id}`
+
+Request:
+
+    {
+    }
+
+Response: 
+
+    {
+    }
+    
+**GET** `/places`
+
+Request:
+
+    {
+    }
+
+Response:
+
+    [
+    	{
+    		id: number;
+    		name: string;
+    	},
+    	.
+    	.
+    	.
+    ]
+    
+**GET** `/places/{id}`
+
+Request:
+
+    {
+    }
+
+Response:
+
+    {
+    	id: number;
+    	name: string;
+    }
+
+**POST** `/places`
+
+Request:
+
+    {
+        name: string;
+    }
+
+Response: 
+
+    {
+    	id: number;
+    }
+
+**PUT** `/places/{id}`
+
+Request:
+
+    {
+            name: string;
+        }
+
+Response: 
+
+    {
+    }
+
+**DELETE** `/places/{id}`
 
 Request:
 
