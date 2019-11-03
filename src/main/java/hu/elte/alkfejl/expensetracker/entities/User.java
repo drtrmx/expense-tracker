@@ -1,5 +1,6 @@
 package hu.elte.alkfejl.expensetracker.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -35,6 +36,7 @@ public class User implements Serializable {
     private Role role;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @JsonIgnore
     public List<Transaction> transactions;
 
     public enum Role {
