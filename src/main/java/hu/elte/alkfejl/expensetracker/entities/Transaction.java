@@ -36,9 +36,11 @@ public class Transaction implements Serializable {
     @NotNull
     private double value;
 
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
+    @ManyToOne(targetEntity = Category.class)
     private Category category;
+
+    @ManyToOne(targetEntity = Place.class)
+    private Place place;
 
     @Column
     @NotNull
@@ -47,8 +49,4 @@ public class Transaction implements Serializable {
 
     @Column
     private String description;
-
-    public enum Category {
-        SHOPPING, LEISURE, BILLS, FAMILY, GIFT,
-    }
 }
