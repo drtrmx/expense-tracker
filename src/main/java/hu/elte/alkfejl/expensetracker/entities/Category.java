@@ -32,12 +32,7 @@ public class Category implements Serializable {
     @JsonIgnore
     private List<Transaction> transactions;
 
-    @ManyToMany(fetch = FetchType.LAZY, targetEntity = Place.class, cascade =
-            {
-                    CascadeType.DETACH,
-                    CascadeType.MERGE,
-                    CascadeType.PERSIST
-            })
+    @ManyToMany
     @JoinTable(name = "places_categories",
             joinColumns = {@JoinColumn(name ="category_id")},
             inverseJoinColumns = {@JoinColumn(name = "place_id")})
