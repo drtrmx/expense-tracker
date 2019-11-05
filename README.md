@@ -11,6 +11,7 @@ The following app is intended to serve as a simple expense tracker to help organ
 - data is stored in databases and can be accessed through the user interface after successful authentication
 
 ### Databases
+![alt text](database.png "Database diagram")
 #### Users
 - Id (number, autoincrement)
 - Username (varchar)
