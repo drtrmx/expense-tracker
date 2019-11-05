@@ -34,6 +34,7 @@ The following app is intended to serve as a simple expense tracker to help organ
 - Name (varchar)
 
 ### API endpoints
+#### Users
 **GET** `/users`
 
 Request:
@@ -68,7 +69,10 @@ Response:
     {
     	id: number;
     }
-    
+#### Transactions
+##### Sequence diagram
+![alt text](sequence.png "Sequence diagram")
+
 **GET** `/transactions`
 
 Request:
@@ -167,7 +171,7 @@ Response:
 
     {
     }
-    
+#### Categories
 **GET** `/categories`
 
 Request:
@@ -273,7 +277,7 @@ Response:
 
     {
     }
-    
+#### Places
 **GET** `/places`
 
 Request:
