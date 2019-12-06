@@ -35,6 +35,30 @@ The following app is intended to serve as a simple expense tracker to help organ
 
 ### API endpoints
 #### Users
+
+**POST** `/users/login`
+
+Request (Content-type: text):
+
+    username
+
+Response: 
+
+    {
+    	id: number;
+        username: string;
+        role: number;
+    }
+
+**POST** `/users/register`
+
+Request:
+
+    {
+        username: string;
+        password: string;
+    }
+    
 **GET** `/users`
 
 Request:
