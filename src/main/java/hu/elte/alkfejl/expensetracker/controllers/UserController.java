@@ -96,7 +96,7 @@ public class UserController {
         if (oUser.isPresent()) {
             return ResponseEntity.ok(oUser.get());
         }
-        return ResponseEntity.ok().build();
+        return ResponseEntity.notFound().build();
     }
 
 }
